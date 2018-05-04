@@ -76,9 +76,14 @@
 
 				var loader = new THREE.ColladaLoader( loadingManager );
 				loader.options.convertUpAxis = true;
-				loader.load( './models/collada/elf/elf.dae', function ( collada ) {
+				loader.load( './models/collada/stormtrooper/stormtrooper.dae', function ( collada ) {
 
 					elf = collada.scene;
+					// Helper
+
+					// Draw bounding box
+					const box = new THREE.BoxHelper(elf, 0xff0000);
+					scene.add(box);
 
 				} );
 
